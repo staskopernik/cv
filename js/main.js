@@ -89,7 +89,7 @@ $('#nav').affix({
 	});
 	
   	// Pretty Photo
-	$("a[rel^='prettyPhoto']").prettyPhoto({
+	$("a[rel^='prettyphoto']").prettyphoto({
 		social_tools: false
 	});	
 
