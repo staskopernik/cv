@@ -404,71 +404,56 @@
             </div>
         </div>
     </div>
-    <!-- Contact Section -->
-    <div>
-        <div>
-            <div>
+    <div id="contact" class="text-center">
+        <div class="container">
+            <div class="section-title center">
                 <h2>Contact</h2>
                 <hr>
             </div>
-            <div>
-                <div>
-                    <i></i>
-                    <p>
-                        Gorbachevskogo St,<br>Lviv, UA 79044
-                    </p>
+            <div class="col-md-8 col-md-offset-2">
+                <div class="col-md-4"> <i class="fa fa-map-marker fa-2x"></i>
+                    <p>Gorbachevskogo St,<br> Lviv, UA 79044</p>
                 </div>
-                <div>
-                    <i></i>
+                <div class="col-md-4"> <i class="fa fa-envelope-o fa-2x"></i>
                     <p>stas_kopernik@ukr.net</p>
                 </div>
-                <div>
-                    <i></i>
+                <div class="col-md-4"> <i class="fa fa-phone fa-2x"></i>
                     <p>+38 097 1 360 350</p>
                 </div>
-                <div></div>
+                <div class="clearfix"></div>
             </div>
-            <div>
+            <div class="col-md-8 col-md-offset-2">
                 <h3>Leave me a message</h3>
-                <form>
-                    <div>
-                        <div>
-                            <div>
+                <form name="sentMessage" id="contactForm" novalidate>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
                                 <input type="text" id="name" class="form-control" placeholder="Name" required="required">
-                                <p></p>
+                                <p class="help-block text-danger"></p>
                             </div>
                         </div>
-                        <div>
-                            <div>
+                        <div class="col-md-6">
+                            <div class="form-group">
                                 <input type="email" id="email" class="form-control" placeholder="Email" required="required">
-                                <p></p>
+                                <p class="help-block text-danger"></p>
                             </div>
                         </div>
                     </div>
-                    <div>
+                    <div class="form-group">
                         <textarea name="message" id="message" class="form-control" rows="4" placeholder="Message" required></textarea>
-                        <p></p>
+                        <p class="help-block text-danger"></p>
                     </div>
-                    <div></div>
+                    <div id="success"></div>
                     <button type="submit" class="btn btn-default">Send Message</button>
                 </form>
-                <div>
+                <div class="social">
                     <ul>
-                        <li>
-                            <a>
-                                <i></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a>
-                                <i></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a>
-                                <i></i>
-                            </a>
-                        </li>
+                        <li><a href="https://www.facebook.com/mihajlo.stasuk"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://vk.com/mihajlo.stasuk"><i class="fa fa-vk"></i></a></li>
+                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                        <li><a href="https://github.com/staskopernik"><i class="fa fa-github"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/%D0%BC%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE-%D1%81%D1%82%D0%B0%D1%81%D1%8E%D0%BA-8819ba114?trk=nav_responsive_tab_profile_pic"><i class="fa fa-linkedin"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -477,13 +462,19 @@
     <div id="footer">
         <div class="container text-center">
             <div class="fnav">
-                <p>
-                    Copyright &copy;2016 Mykhailo Stasiuk. Designed by <a href="http://mykhailo-stasiuk.esy.es/" rel="nofollow">Mykhailo Stasiuk</a>
-                </p>
+                <p>Copyright &copy; 2016 Mykhailo Stasiuk. Designed by <a href="http://mykhailo-stasiuk.esy.es/" rel="nofollow">Mykhailo Stasiuk</a></p>
             </div>
         </div>
     </div>
+    <script type="text/javascript" src="js/jquery.1.11.1.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/SmoothScroll.js"></script>
+    <script type="text/javascript" src="js/easypiechart.js"></script>
+    <script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
+    <script type="text/javascript" src="js/jquery.isotope.js"></script>
+    <script type="text/javascript" src="js/jquery.counterup.js"></script>
+    <script type="text/javascript" src="js/waypoints.js"></script>
+    <script type="text/javascript" src="js/jqBootstrapValidation.js"></script>
     <script type="text/javascript" src="js/contact_me.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 </body>
