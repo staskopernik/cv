@@ -1,0 +1,317 @@
+#achievements {
+  overflow: hidden;
+}
+
+.overview-grid > div {
+  margin-bottom: 30px;
+}
+
+.overview-card {
+  min-height: 300px;
+  padding: 28px 20px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: linear-gradient(145deg, rgba(7, 28, 42, 0.93), rgba(18, 29, 31, 0.78));
+  box-shadow: 0 18px 38px rgba(18, 29, 31, 0.18);
+  color: #fff;
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .65s ease, transform .65s ease, box-shadow .35s ease;
+}
+
+.overview-grid > div:nth-child(2) .overview-card { transition-delay: .08s; }
+.overview-grid > div:nth-child(3) .overview-card { transition-delay: .16s; }
+.overview-grid > div:nth-child(4) .overview-card { transition-delay: .24s; }
+
+.overview-card.is-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.overview-card:hover {
+  box-shadow: 0 22px 48px rgba(18, 29, 31, 0.3);
+}
+
+.overview-card h4 {
+  margin: 6px 0 0;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.overview-number {
+  display: block;
+  margin-top: 18px;
+  color: #fff;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.overview-visual {
+  position: relative;
+  height: 125px;
+  color: #b7eff7;
+}
+
+/* Build -> fail -> automatic recovery */
+.build-console {
+  overflow: hidden;
+  border: 1px solid rgba(183, 239, 247, .32);
+  border-radius: 8px;
+  background: rgba(2, 14, 24, .74);
+}
+
+.console-top {
+  height: 24px;
+  padding: 7px 9px;
+  text-align: left;
+  background: rgba(255, 255, 255, .07);
+}
+
+.console-top span {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 4px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .28);
+}
+
+.build-line {
+  display: flex;
+  gap: 8px;
+  padding: 22px 18px 15px;
+}
+
+.build-line i {
+  display: block;
+  height: 6px;
+  flex: 1;
+  border-radius: 6px;
+  background: rgba(183, 239, 247, .2);
+}
+
+.overview-build.is-active .build-line i {
+  animation: buildStep 5s ease-in-out infinite;
+}
+.overview-build.is-active .build-line i:nth-child(2) { animation-delay: .35s; }
+.overview-build.is-active .build-line i:nth-child(3) { animation-delay: .7s; }
+
+.build-status {
+  position: relative;
+  height: 28px;
+  font: 700 12px/28px 'Open Sans', sans-serif;
+  letter-spacing: 1.1px;
+}
+
+.build-status span {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+
+.status-building { color: #b7eff7; }
+.status-failed { color: #ff7e7e; }
+.status-recovered { color: #7df0b0; }
+
+.overview-build.is-active .status-building { animation: statusBuilding 5s infinite; }
+.overview-build.is-active .status-failed { animation: statusFailed 5s infinite; }
+.overview-build.is-active .status-recovered { animation: statusRecovered 5s infinite; }
+.overview-build.is-active .status-building .fa { animation: spin 1.15s linear infinite; }
+.overview-build.is-active .status-failed .fa { animation: errorShake .28s ease 2; }
+
+/* CI/CD travelling through three stages */
+.pipeline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.pipeline-rail {
+  position: absolute;
+  left: 18%;
+  right: 18%;
+  top: 50%;
+  height: 2px;
+  background: rgba(183, 239, 247, .25);
+}
+
+.pipeline-node {
+  position: relative;
+  z-index: 2;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(183, 239, 247, .48);
+  border-radius: 50%;
+  background: #102c38;
+  font-size: 20px;
+  line-height: 46px;
+}
+
+.pipeline-pulse {
+  position: absolute;
+  z-index: 3;
+  left: 15%;
+  top: calc(50% - 5px);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #7df0b0;
+  box-shadow: 0 0 14px #7df0b0;
+  opacity: 0;
+}
+
+.overview-pipeline.is-active .pipeline-pulse { animation: pipelineTravel 3.8s ease-in-out infinite; }
+.overview-pipeline.is-active .pipeline-node { animation: nodeGlow 3.8s ease-in-out infinite; }
+.overview-pipeline.is-active .node-build { animation-delay: .75s; }
+.overview-pipeline.is-active .node-deploy { animation-delay: 1.5s; }
+.overview-pipeline.is-active .node-build .fa { animation: spin 2.2s linear infinite; }
+
+/* Two clouds continuously synchronising */
+.cloud-sync {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5px;
+}
+
+.cloud {
+  position: relative;
+  z-index: 2;
+  width: 68px;
+  font-size: 42px;
+  text-shadow: 0 0 16px rgba(183, 239, 247, .22);
+}
+
+.cloud small {
+  display: block;
+  margin-top: -4px;
+  color: rgba(255,255,255,.76);
+  font: 700 9px/1 'Open Sans', sans-serif;
+  letter-spacing: 1px;
+}
+
+.sync-path {
+  position: absolute;
+  left: 31%;
+  right: 31%;
+  top: 48%;
+  height: 2px;
+  background: rgba(183, 239, 247, .22);
+}
+
+.sync-path span {
+  position: absolute;
+  top: -3px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #7df0b0;
+  opacity: 0;
+}
+
+.overview-cloud.is-active .sync-path span { animation: syncDot 3s ease-in-out infinite; }
+.overview-cloud.is-active .sync-path span:nth-child(2) { animation-delay: 1s; }
+.overview-cloud.is-active .sync-path span:nth-child(3) { animation-delay: 2s; }
+.overview-cloud.is-active .cloud { animation: cloudFloat 3s ease-in-out infinite; }
+.overview-cloud.is-active .cloud-right { animation-delay: .45s; }
+
+/* Course progress fills, then the certificate is awarded */
+.learning-progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.course-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+  width: 58px;
+  height: 58px;
+  padding-bottom: 4px;
+  border-bottom: 2px solid rgba(183, 239, 247, .25);
+}
+
+.course-bars i {
+  display: block;
+  width: 11px;
+  height: 12px;
+  border-radius: 2px 2px 0 0;
+  background: #b7eff7;
+  transform-origin: bottom;
+}
+
+.course-bars i:nth-child(2) { height: 25px; }
+.course-bars i:nth-child(3) { height: 38px; }
+.course-bars i:nth-child(4) { height: 52px; background: #7df0b0; }
+
+.overview-learning.is-active .course-bars i { animation: courseGrow 4.2s ease-in-out infinite; }
+.overview-learning.is-active .course-bars i:nth-child(2) { animation-delay: .18s; }
+.overview-learning.is-active .course-bars i:nth-child(3) { animation-delay: .36s; }
+.overview-learning.is-active .course-bars i:nth-child(4) { animation-delay: .54s; }
+
+.certificate {
+  position: relative;
+  width: 66px;
+  height: 54px;
+  border: 1px solid rgba(183, 239, 247, .5);
+  border-radius: 5px;
+  background: rgba(255,255,255,.06);
+  font-size: 27px;
+  line-height: 54px;
+}
+
+.cert-check {
+  position: absolute;
+  right: -8px;
+  bottom: -8px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #7df0b0;
+  color: #102c38;
+  font-size: 12px;
+  line-height: 25px;
+  opacity: 0;
+  transform: scale(.2);
+}
+
+.overview-learning.is-active .cert-check { animation: awardCheck 4.2s ease-in-out infinite; }
+
+@keyframes buildStep {
+  0%, 8% { background: rgba(183,239,247,.2); box-shadow: none; }
+  20%, 34% { background: #78d9ea; box-shadow: 0 0 10px rgba(120,217,234,.7); }
+  42%, 53% { background: #ff7272; box-shadow: 0 0 10px rgba(255,114,114,.55); }
+  64%, 94% { background: #7df0b0; box-shadow: 0 0 10px rgba(125,240,176,.55); }
+  100% { background: rgba(183,239,247,.2); box-shadow: none; }
+}
+@keyframes statusBuilding { 0%, 32% { opacity: 1; } 36%, 100% { opacity: 0; } }
+@keyframes statusFailed { 0%, 35% { opacity: 0; } 40%, 53% { opacity: 1; } 58%, 100% { opacity: 0; } }
+@keyframes statusRecovered { 0%, 58% { opacity: 0; } 64%, 94% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes errorShake { 0%,100% { transform: translateX(0); } 50% { transform: translateX(3px); } }
+@keyframes pipelineTravel { 0% { left: 15%; opacity: 0; } 10% { opacity: 1; } 75% { left: 82%; opacity: 1; } 88%,100% { left: 82%; opacity: 0; } }
+@keyframes nodeGlow { 0%,18%,100% { color:#b7eff7; border-color:rgba(183,239,247,.48); box-shadow:none; } 25%,45% { color:#7df0b0; border-color:#7df0b0; box-shadow:0 0 16px rgba(125,240,176,.55); } }
+@keyframes syncDot { 0% { left:0; opacity:0; } 15% { opacity:1; } 75% { left:calc(100% - 8px); opacity:1; } 90%,100% { left:calc(100% - 8px); opacity:0; } }
+@keyframes cloudFloat { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-6px); color:#fff; } }
+@keyframes courseGrow { 0%,10% { transform:scaleY(.15); opacity:.35; } 38%,82% { transform:scaleY(1); opacity:1; } 100% { transform:scaleY(.15); opacity:.35; } }
+@keyframes awardCheck { 0%,42% { opacity:0; transform:scale(.2) rotate(-20deg); } 55%,84% { opacity:1; transform:scale(1) rotate(0); } 100% { opacity:0; transform:scale(.2); } }
+
+@media (max-width: 767px) {
+  .overview-grid > div { padding-left: 30px; padding-right: 30px; }
+  .overview-card { min-height: 282px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .overview-card,
+  .overview-card *,
+  .overview-card.is-active * {
+    animation: none !important;
+    transition: none !important;
+  }
+  .overview-card { opacity: 1; transform: none; }
+  .status-recovered, .cert-check { opacity: 1; transform: none; }
+}

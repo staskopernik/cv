@@ -14,6 +14,7 @@
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/overview-animations.css">
   <link rel="stylesheet" type="text/css" href="css/prettyPhoto.css">
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet" type="text/css">
@@ -114,11 +115,55 @@
   <div id="achievements" class="text-center">
     <div class="container">
       <div class="section-title center"><h2>Professional Overview</h2><hr></div>
-      <div class="row">
-        <div class="col-md-3 col-sm-3"><div class="achievement-box"><span class="count">12</span><h4>Years in IT</h4></div></div>
-        <div class="col-md-3 col-sm-3"><div class="achievement-box"><span class="count">5</span><h4>Years in DevOps</h4></div></div>
-        <div class="col-md-3 col-sm-3"><div class="achievement-box"><span class="count">2</span><h4>Cloud Platforms</h4></div></div>
-        <div class="col-md-3 col-sm-3"><div class="achievement-box"><span class="count">20</span><h4>Professional Courses</h4></div></div>
+      <div class="row overview-grid">
+        <div class="col-md-3 col-sm-6">
+          <div class="overview-card overview-build" data-overview-card>
+            <div class="overview-visual build-console" aria-hidden="true">
+              <div class="console-top"><span></span><span></span><span></span></div>
+              <div class="build-line"><i></i><i></i><i></i></div>
+              <div class="build-status">
+                <span class="status-building"><i class="fa fa-cog"></i> BUILDING</span>
+                <span class="status-failed"><i class="fa fa-times"></i> FAILED</span>
+                <span class="status-recovered"><i class="fa fa-check"></i> RECOVERED</span>
+              </div>
+            </div>
+            <span class="overview-number">12</span>
+            <h4>Years in IT</h4>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="overview-card overview-pipeline" data-overview-card>
+            <div class="overview-visual pipeline" aria-hidden="true">
+              <div class="pipeline-rail"></div><span class="pipeline-pulse"></span>
+              <div class="pipeline-node node-code"><i class="fa fa-code"></i></div>
+              <div class="pipeline-node node-build"><i class="fa fa-cog"></i></div>
+              <div class="pipeline-node node-deploy"><i class="fa fa-rocket"></i></div>
+            </div>
+            <span class="overview-number">5</span>
+            <h4>Years in DevOps</h4>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="overview-card overview-cloud" data-overview-card>
+            <div class="overview-visual cloud-sync" aria-hidden="true">
+              <div class="cloud cloud-left"><i class="fa fa-cloud"></i><small>AWS</small></div>
+              <div class="sync-path"><span></span><span></span><span></span></div>
+              <div class="cloud cloud-right"><i class="fa fa-cloud"></i><small>AZURE</small></div>
+            </div>
+            <span class="overview-number">2</span>
+            <h4>Cloud Platforms</h4>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="overview-card overview-learning" data-overview-card>
+            <div class="overview-visual learning-progress" aria-hidden="true">
+              <div class="course-bars"><i></i><i></i><i></i><i></i></div>
+              <div class="certificate"><i class="fa fa-graduation-cap"></i><span class="cert-check"><i class="fa fa-check"></i></span></div>
+            </div>
+            <span class="overview-number">20</span>
+            <h4>Professional Courses</h4>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -271,5 +316,6 @@
   <script type="text/javascript" src="js/waypoints.js"></script>
   <script type="text/javascript" src="js/jqBootstrapValidation.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
+  <script type="text/javascript" src="js/overview-animations.js"></script>
 </body>
 </html>
